@@ -34,9 +34,6 @@ func loadAPIConfig(filename string) (*apiConfigData, error) {
 	return &config, nil
 }
 
-func hello(w http.ResponseWriter, r *http.Request) {
-	w.Write([]byte("Hello, World!"))
-}
 
 func query(city string) (*weatherData, error) {
 	config, err := loadAPIConfig(".apiConfig")
@@ -60,6 +57,9 @@ func query(city string) (*weatherData, error) {
 	}
 
 	return &data, nil
+}
+func hello(w http.ResponseWriter, r *http.Request) {
+	w.Write([]byte("Hello, World!"))
 }
 
 func main() {
